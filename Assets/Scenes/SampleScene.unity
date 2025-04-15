@@ -306,9 +306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e73ba2488d4ec8458035b6aff138a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RedPaint: {fileID: 0}
-  BluePaint: {fileID: 0}
-  GreenPaint: {fileID: 0}
+  redMat: {fileID: 0}
+  blueMat: {fileID: 0}
+  greenMat: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +485,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 784529708}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1983807908}
+        m_TargetAssemblyTypeName: CubeColorChanger, Assembly-CSharp
+        m_MethodName: SetBlue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &784529708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,13 +753,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1983807902}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983807908}
+        m_TargetAssemblyTypeName: CubeColorChanger, Assembly-CSharp
+        m_MethodName: SetRed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1261,12 +1273,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1983807902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e73ba2488d4ec8458035b6aff138a69, type: 3}
+  m_Script: {fileID: 11500000, guid: 2509e7b3597c82946aeb7ef328fcdd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RedPaint: {fileID: 2100000, guid: 163fbeba1bc437e4e860a977255aa221, type: 2}
-  BluePaint: {fileID: 2100000, guid: 15f03e667400ef94a8f909ace6d929a1, type: 2}
-  GreenPaint: {fileID: 2100000, guid: b8cf2ba97dbc5f64c9faf4bcbbd5f25e, type: 2}
+  redMaterial: {fileID: 2100000, guid: 163fbeba1bc437e4e860a977255aa221, type: 2}
+  blueMaterial: {fileID: 2100000, guid: 15f03e667400ef94a8f909ace6d929a1, type: 2}
+  greenMaterial: {fileID: 2100000, guid: b8cf2ba97dbc5f64c9faf4bcbbd5f25e, type: 2}
 --- !u!1 &2017864344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1361,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2017864347}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1983807908}
+        m_TargetAssemblyTypeName: CubeColorChanger, Assembly-CSharp
+        m_MethodName: SetGreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2017864347
 MonoBehaviour:
   m_ObjectHideFlags: 0

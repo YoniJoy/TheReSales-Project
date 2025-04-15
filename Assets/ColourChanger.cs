@@ -3,23 +3,36 @@ using UnityEngine.UI;
 
 public class ColorChanger : MonoBehaviour
 {
-    // These are your paint cans
-    public Material RedPaint;
-    public Material BluePaint;
-    public Material GreenPaint;
+    // Drag the materials in Inspector
+    public Material redMaterial;
+    public Material blueMaterial;
+    public Material greenMaterial;
+
+    // Reference to the SINGLE cube I want to modify
+    private GameObject targetCube;
 
     void Start()
     {
-        // Red button uses red paint
-        GameObject.Find("RedButton").GetComponent<Button>().onClick.AddListener(() =>
-            GetComponentInChildren<MeshRenderer>().material = RedPaint);
+        // Finds the cube automatically
+        targetCube = GameObject.Find("Chair"); // Change "Chair" to your cube's exact name
 
-        // Blue button uses blue paint
-        GameObject.Find("BlueButton").GetComponent<Button>().onClick.AddListener(() =>
-            GetComponentInChildren<MeshRenderer>().material = BluePaint);
+        // Safety check
+        if (targetCube == null)
+        {
+            Debug.LogError("No cube named 'Chair' found!");
+        }
+    }
 
-        // Green button uses green paint
-        GameObject.Find("GreenButton").GetComponent<Button>().onClick.AddListener(() =>
-            GetComponentInChildren<MeshRenderer>().material = GreenPaint);
+    // Button functions
+    public void SetRed() { SetMaterial(redMaterial); }
+    public void SetBlue() { SetMaterial(blueMaterial); }
+    public void SetGreen() { SetMaterial(greenMaterial); }
+
+    void SetMaterial(Material mat)
+    {
+        if (targetCube != null && mat != null)
+        {
+            targetCube.GetComponent<MeshRenderer>().material = mat;
+        }
     }
 }
