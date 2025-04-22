@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 784529708}
   - component: {fileID: 784529707}
   m_Layer: 5
-  m_Name: BlueButton
+  m_Name: Orange Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,9 +483,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1983807908}
-        m_TargetAssemblyTypeName: CubeColorChanger, Assembly-CSharp
-        m_MethodName: SetBlue
+      - m_Target: {fileID: 1852910003}
+        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
+        m_MethodName: SetOrange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25513223, g: 0.78858596, b: 0.9433962, a: 1}
+  m_Color: {r: 0.94509804, g: 0.7665025, b: 0.254902, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 862776291}
   - component: {fileID: 862776290}
   m_Layer: 5
-  m_Name: Green
+  m_Name: Text - Beige
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -590,9 +590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Green
-
-'
+  m_text: Beige
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -682,7 +680,7 @@ GameObject:
   - component: {fileID: 872334287}
   - component: {fileID: 872334286}
   m_Layer: 5
-  m_Name: RedButton
+  m_Name: YellowButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -752,9 +750,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1983807908}
-        m_TargetAssemblyTypeName: CubeColorChanger, Assembly-CSharp
-        m_MethodName: SetRed
+      - m_Target: {fileID: 1852910003}
+        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
+        m_MethodName: SetYellow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -777,7 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8018868, g: 0.32708034, b: 0.29251212, a: 1}
+  m_Color: {r: 0.8, g: 0.7475302, b: 0.29411766, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -831,7 +829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1983807903}
+  - {fileID: 1288034264}
   - {fileID: 1328549582}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -937,13 +935,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288034263}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1343904255}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 904134011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1328549581
 GameObject:
@@ -1091,12 +1089,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 183dd6a0eb28244468716a2d6633a462, type: 2}
     - target: {fileID: 919132149155446097, guid: 5d9f75a728dc6ee48b9f598df9282656, type: 3}
       propertyPath: m_Name
-      value: Chair_V7
+      value: Chair
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5d9f75a728dc6ee48b9f598df9282656, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1852910003}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5d9f75a728dc6ee48b9f598df9282656, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1852910002}
   m_SourcePrefab: {fileID: 100100000, guid: 5d9f75a728dc6ee48b9f598df9282656, type: 3}
 --- !u!4 &1343904255 stripped
 Transform:
@@ -1115,7 +1119,7 @@ GameObject:
   - component: {fileID: 1800179044}
   - component: {fileID: 1800179043}
   m_Layer: 5
-  m_Name: Blue
+  m_Name: Text -Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1160,7 +1164,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Blue
+  m_text: Orange
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1237,135 +1241,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800179041}
   m_CullTransparentMesh: 1
---- !u!1 &1983807902
+--- !u!1 &1852910001 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5d9f75a728dc6ee48b9f598df9282656, type: 3}
+  m_PrefabInstance: {fileID: 1343904254}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1983807903}
-  - component: {fileID: 1983807906}
-  - component: {fileID: 1983807905}
-  - component: {fileID: 1983807904}
-  - component: {fileID: 1983807908}
-  - component: {fileID: 1983807909}
-  m_Layer: 0
-  m_Name: Chair
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1983807903
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983807902}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 904134011}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1983807904
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983807902}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1983807905
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983807902}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1983807906
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983807902}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1983807908
+--- !u!114 &1852910002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983807902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2509e7b3597c82946aeb7ef328fcdd30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redMaterial: {fileID: 2100000, guid: 163fbeba1bc437e4e860a977255aa221, type: 2}
-  blueMaterial: {fileID: 2100000, guid: 15f03e667400ef94a8f909ace6d929a1, type: 2}
-  greenMaterial: {fileID: 2100000, guid: b8cf2ba97dbc5f64c9faf4bcbbd5f25e, type: 2}
---- !u!114 &1983807909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983807902}
+  m_GameObject: {fileID: 1852910001}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edba48b5be290b1469d8f0f31178574e, type: 3}
@@ -1377,7 +1264,22 @@ MonoBehaviour:
   minZoomDistance: 1
   maxZoomDistance: 5
   mainCam: {fileID: 1328549584}
-  cameraTarget: {fileID: 1983807903}
+  cameraTarget: {fileID: 1343904255}
+--- !u!114 &1852910003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852910001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2509e7b3597c82946aeb7ef328fcdd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yellowMaterial: {fileID: 2100000, guid: 2f9923c379f490e47b05ded3c407f7ae, type: 2}
+  orangeMaterial: {fileID: 2100000, guid: a214037c6041a1d479b96358ce688e09, type: 2}
+  beigeMaterial: {fileID: 2100000, guid: 183dd6a0eb28244468716a2d6633a462, type: 2}
 --- !u!1 &2017864344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1293,7 @@ GameObject:
   - component: {fileID: 2017864347}
   - component: {fileID: 2017864346}
   m_Layer: 5
-  m_Name: GreenButton
+  m_Name: Beige Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1461,9 +1363,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1983807908}
-        m_TargetAssemblyTypeName: CubeColorChanger, Assembly-CSharp
-        m_MethodName: SetGreen
+      - m_Target: {fileID: 1852910003}
+        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
+        m_MethodName: SetBeige
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1486,7 +1388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.37987584, g: 0.9433962, b: 0.20173243, a: 1}
+  m_Color: {r: 0.9339623, g: 0.8804958, b: 0.7636169, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1523,7 +1425,7 @@ GameObject:
   - component: {fileID: 2049254653}
   - component: {fileID: 2049254652}
   m_Layer: 5
-  m_Name: Red
+  m_Name: Text - Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1568,7 +1470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Red
+  m_text: Yellow
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1653,4 +1555,3 @@ SceneRoots:
   - {fileID: 904134011}
   - {fileID: 90491464}
   - {fileID: 479934983}
-  - {fileID: 1288034264}

@@ -3,36 +3,55 @@ using UnityEngine.UI;
 
 public class ColorChanger : MonoBehaviour
 {
-    // Drag the materials in Inspector
-    public Material redMaterial;
-    public Material blueMaterial;
-    public Material greenMaterial;
+    // Drag your yellow, orange, and beige materials into these slots in the Inspector
+    public Material yellowMaterial;
+    public Material orangeMaterial;
+    public Material beigeMaterial;
 
-    // Reference to the SINGLE cube I want to modify
-    private GameObject targetCube;
+    // Reference to the chair GameObject
+    private GameObject targetChair;
 
     void Start()
     {
-        // Finds the cube automatically
-        targetCube = GameObject.Find("Chair"); // Change "Chair" to your cube's exact name
+        // Find the chair by name (make sure the GameObject in the scene is named exactly "Chair")
+        targetChair = GameObject.Find("Chair");
 
-        // Safety check
-        if (targetCube == null)
+        if (targetChair == null)
         {
-            Debug.LogError("No cube named 'Chair' found!");
+            Debug.LogError("No GameObject named 'Chair' found!");
         }
     }
 
-    // Button functions
-    public void SetRed() { SetMaterial(redMaterial); }
-    public void SetBlue() { SetMaterial(blueMaterial); }
-    public void SetGreen() { SetMaterial(greenMaterial); }
-
-    void SetMaterial(Material mat)
+    // These functions can be linked to UI buttons
+    public void SetYellow()
     {
-        if (targetCube != null && mat != null)
+        SetMaterial(yellowMaterial);
+    }
+
+    public void SetOrange()
+    {
+        SetMaterial(orangeMaterial);
+    }
+
+    public void SetBeige()
+    {
+        SetMaterial(beigeMaterial);
+    }
+
+    // Applies the selected material to the chair
+    private void SetMaterial(Material mat)
+    {
+        if (targetChair != null && mat != null)
         {
-            targetCube.GetComponent<MeshRenderer>().material = mat;
+            MeshRenderer renderer = targetChair.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                renderer.material = mat;
+            }
+            else
+            {
+                Debug.LogError("No MeshRenderer found on the Chair GameObject!");
+            }
         }
     }
 }
