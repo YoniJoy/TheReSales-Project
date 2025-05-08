@@ -9,7 +9,7 @@ public class ChairInteractionController : MonoBehaviour
     public float maxZoomDistance = 5f;
 
     public Camera mainCam;
-    public Transform cameraTarget; // Empty object near chair, zoom focus
+    public Transform cameraTarget; // Empty object near chair, zoom & view focus
 
     private Vector3 lastMousePos;
     private bool isLeftDragging = false;
@@ -49,10 +49,9 @@ public class ChairInteractionController : MonoBehaviour
         {
             Vector3 delta = Input.mousePosition - lastMousePos;
             float rotationY = delta.x * rotationSpeed * Time.deltaTime;
-            float rotationX = -delta.y * rotationSpeed * Time.deltaTime;
 
-            transform.Rotate(mainCam.transform.up, -rotationY, Space.World); // Horizontal rotation
-            transform.Rotate(mainCam.transform.right, rotationX, Space.World); // Vertical rotation
+            // Only rotate around Y (horizontal), to avoid chaotic vertical rotation
+            transform.Rotate(Vector3.up, -rotationY, Space.World);
 
             lastMousePos = Input.mousePosition;
         }
@@ -76,7 +75,7 @@ public class ChairInteractionController : MonoBehaviour
             Vector3 delta = Input.mousePosition - lastMousePos;
             Vector3 move = new Vector3(-delta.x, -delta.y, 0) * moveSpeed;
 
-            // Convert screen move to world move
+            // Convert screen movement to world movement
             transform.position += mainCam.transform.right * move.x + mainCam.transform.up * move.y;
 
             lastMousePos = Input.mousePosition;
@@ -97,5 +96,31 @@ public class ChairInteractionController : MonoBehaviour
             Vector3 dir = (mainCam.transform.position - cameraTarget.position).normalized;
             mainCam.transform.position = cameraTarget.position + dir * currentZoomDistance;
         }
+    }
+
+    // === Camera View Switches ===
+
+    public void SetTopView()
+    {
+        SetCameraView(new Vector3(0, 3, 0), Quaternion.Euler(90, 0, 0));
+    }
+
+    public void SetLeftView()
+    {
+        SetCameraView(new Vector3(-3, 1, 0), Quaternion.Euler(15, 90, 0));
+    }
+
+    public void SetRightView()
+    {
+        SetCameraView(new Vector3(3, 1, 0), Quaternion.Euler(15, -90, 0));
+    }
+
+    private void SetCameraView(Vector3 offset, Quaternion rotation)
+    {
+        if (cameraTarget == null || mainCam == null) return;
+
+        mainCam.transform.position = cameraTarget.position + offset;
+        mainCam.transform.rotation = rotation;
+        currentZoomDistance = Vector3.Distance(mainCam.transform.position, cameraTarget.position);
     }
 }
