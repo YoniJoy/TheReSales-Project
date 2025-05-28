@@ -4,9 +4,9 @@ public class ChairInteractionController : MonoBehaviour
 {
     [Header("Interaction Settings")]
     public float rotationSpeed = 100f; // Speed of rotation based on mouse movement
-    public float zoomSpeed = 2f;       // Speed of zooming in/out with the scroll wheel
-    public float minZoomDistance = 1f; // Closest zoom distance allowed
-    public float maxZoomDistance = 5f; // Furthest zoom distance allowed
+    public float zoomSpeed = 2.0f;       // Speed of zooming in/out with the scroll wheel
+    public float minZoomDistance = 0.0f; // Closest zoom distance allowed
+    public float maxZoomDistance = 5.0f; // Furthest zoom distance allowed
 
     [Header("Camera and Target References")]
     public Camera mainCam;             // Reference to the main camera
@@ -22,6 +22,9 @@ public class ChairInteractionController : MonoBehaviour
     private Quaternion initialChairRotation;  // Original chair rotation at start
     private float initialZoomDistance;        // Original zoom distance at start
     private Vector3 initialCameraPosition;    // Original camera position at start
+
+    [SerializeField] private GameObject chair;
+    [SerializeField] private float _scroll;
 
     void Start()
     {
@@ -47,6 +50,7 @@ public class ChairInteractionController : MonoBehaviour
         HandleZoom();    // Allows zooming in/out using the mouse scroll wheel
         HandleRotation(); // Allows rotating the chair using right mouse drag
         HandleReset();   // Resets the chair and camera to their original states on key press
+        _scroll = Input.GetAxis("Mouse ScrollWheel");
     }
 
     /// <summary>
@@ -89,21 +93,25 @@ public class ChairInteractionController : MonoBehaviour
     /// </summary>
     void HandleZoom()
     {
-        if (cameraTarget == null || mainCam == null)
-            return;
+        float scroll = _scroll;
 
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (chair == null) return;
 
         if (Mathf.Abs(scroll) > 0.01f)
         {
-            // Adjust zoom based on scroll input
-            currentZoomDistance -= scroll * zoomSpeed;
-            currentZoomDistance = Mathf.Clamp(currentZoomDistance, minZoomDistance, maxZoomDistance);
-
-            // Move camera along the direction vector relative to the target
-            Vector3 dir = (mainCam.transform.position - cameraTarget.position).normalized;
-            mainCam.transform.position = cameraTarget.position + dir * currentZoomDistance;
+           
+            chair.transform.localScale += new Vector3(scroll * zoomSpeed, scroll * zoomSpeed, scroll * zoomSpeed);
+            float xScale = chair.transform.localScale.x;
+            float yScale = chair.transform.localScale.y;
+            float zScale = chair.transform.localScale.z;
+            
+            xScale = Mathf.Clamp(xScale, minZoomDistance, maxZoomDistance);
+            yScale = Mathf.Clamp(yScale, minZoomDistance, maxZoomDistance);
+            zScale = Mathf.Clamp(zScale, minZoomDistance, maxZoomDistance);
+         
+            chair.transform.localScale = new Vector3(xScale, yScale, zScale);
         }
+
     }
 
     /// <summary>
